@@ -1,0 +1,25 @@
+<div class="container-sm mt-5">
+
+  <h1 class="text-center">PomoTal</h1>
+
+  <div class="row mt-5">
+    <div class="col-12 d-flex justify-content-center">
+      <strong>{{pomodoro.label}}</strong>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      {{pomodoro.timeInSeconds}}
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center mt-5">
+    <div class="col-2 d-grid">
+      <button class="btn btn-primary btn-block" *ngIf="!pomodoro.running && !pomodoro.started"
+        (click)="OnStart()">Iniciar</button>
+      <button class="btn btn-primary btn-block" *ngIf="!pomodoro.running && pomodoro.started"
+        (click)="OnContinue()">Continuar</button>
+      <button class="btn btn-danger btn-block" *ngIf="pomodoro.running" (click)="OnStop()">Parar</button>
+    </div>
+    <div class="col-2 d-grid">
+      <button class="btn btn-secondary btn-block" (click)="OnNext()">Avançar</button>
+    </div>
+  </div>
+</div>
